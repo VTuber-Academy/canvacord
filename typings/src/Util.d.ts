@@ -1,3 +1,9 @@
+interface GetLinesParams {
+    text: string;
+    ctx: CanvasRenderingContext2D;
+    maxWidth: number;
+}
+
 export = Util;
 declare class Util {
     /**
@@ -60,14 +66,17 @@ declare class Util {
      * @returns {string}
      */
     static getAcronym(name: string): string;
+
+    
+    
     /**
      * Returns array of lines
-     * @param {object} params Params
-     * @param {string} text Text
-     * @param {CanvasRenderingContext2D} ctx CanvasRenderingContext2D
-     * @param {number} maxWidth Max width
+     * @param {GetLinesParams} params - The object containing the method's parameters
+     * @param {string} params.text - Text
+     * @param {CanvasRenderingContext2D} params.ctx - CanvasRenderingContext2D
+     * @param {number} params.maxWidth - Max width
      * @returns {string[]}
      */
-    static getLines({ text, ctx, maxWidth }: object): string[];
+    static getLines({ text, ctx, maxWidth }: GetLinesParams): string[];
 }
 //# sourceMappingURL=Util.d.ts.map
